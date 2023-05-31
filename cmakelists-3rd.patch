@@ -1,13 +1,15 @@
 diff --git a/3rd/CMakeLists.txt b/3rd/CMakeLists.txt
-index b49403c6c..b9a349bd0 100644
+index b49403c6c..d516113e4 100644
 --- a/3rd/CMakeLists.txt
 +++ b/3rd/CMakeLists.txt
-@@ -225,7 +225,7 @@ if(NOT wxSQLite3_FOUND OR NOT (WXSQLITE3_HAVE_CODEC OR MMEX_ENCRYPTION_OPTIONAL)
+@@ -225,7 +225,9 @@ if(NOT wxSQLite3_FOUND OR NOT (WXSQLITE3_HAVE_CODEC OR MMEX_ENCRYPTION_OPTIONAL)
      endif()
  
      if(NOT MSVC) # wxSQLite3 security ext doesn't require C 99 for MSVC
 -        set (CMAKE_C_FLAGS "-msse4.2 -maes")
-+        set (CMAKE_C_FLAGS "")
++        if(";i386;i686;amd64;x86_64;" MATCHES ";${CMAKE_HOST_SYSTEM_PROCESSOR};")
++            set (CMAKE_C_FLAGS "-msse4.2 -maes")
++        endif()
          if(";${CMAKE_C_COMPILE_FEATURES};" MATCHES ";c_std_99;")
              target_compile_features(SQLite3 PRIVATE c_std_99)
          elseif(";${CMAKE_C_COMPILE_FEATURES};" MATCHES ";c_restrict;")

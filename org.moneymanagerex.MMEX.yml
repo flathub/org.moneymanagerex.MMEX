@@ -84,4 +84,3 @@ modules:
         path: cmakelists-mmex.patch
       - type: patch
         path: cmakelists-3rd.patch
-        only-arches: [aarch64]
