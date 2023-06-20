@@ -73,11 +73,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        tag: v1.6.3
+        tag: v1.6.4
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        commit: 48d85629230dc690c348660d1bf3978d8c0bf63f
+        commit: dd67784392b6a3fefd5ca8abb0e4e4c8c3e4a54c
       - type: file
         path: org.moneymanagerex.MMEX.metainfo.xml
       - type: patch

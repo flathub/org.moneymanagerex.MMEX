@@ -342,6 +342,8 @@
 
   <releases>
     
+    <release version="1.6.4" date="2023-06-20"/>
+    
     <release version="1.6.3" date="2023-02-01">
       <url>https://github.com/moneymanagerex/moneymanagerex/releases/</url>
         
@@ -369,5 +371,5 @@
   <url type="donation">https://moneymanagerex.org/docs/mmex/donate/</url>
   <url type="translate">https://crowdin.com/project/moneymanagerex</url>
 
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
 </component>
