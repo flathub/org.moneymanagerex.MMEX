@@ -3,8 +3,6 @@ runtime: org.gnome.Platform
 runtime-version: '44'
 sdk: org.gnome.Sdk
 command: mmex
-rename-desktop-file: mmex.desktop
-rename-icon: mmex
 cleanup:
   - /bin/wx-config
   - /bin/wxrc
@@ -68,19 +66,10 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
-    post-install:
-      - install -Dm644 "${FLATPAK_ID}.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        tag: v1.6.3
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
-        commit: 48d85629230dc690c348660d1bf3978d8c0bf63f
-      - type: file
-        path: org.moneymanagerex.MMEX.metainfo.xml
-      - type: patch
-        path: cmakelists-mmex.patch
-      - type: patch
-        path: cmakelists-3rd.patch
+        commit: 63f03cb3d968b8933ca3378c12a6576e26706803
+        #x-checker-data:
+        #  type: git
+        #  tag-pattern: ^v([\d.]+)$
