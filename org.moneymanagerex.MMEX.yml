@@ -57,7 +57,7 @@ modules:
       - --enable-intl
     sources:
       - type: git
-        commit: 3b7d81b7f28353ed3b932fbcce958cdc81cc1992
+        tag: v3.2.3
         url: https://github.com/wxWidgets/wxWidgets
     #  - type: archive
     #    url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.2.1/wxWidgets-3.2.2.1.tar.bz2
