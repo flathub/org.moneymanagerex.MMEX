@@ -1,6 +1,6 @@
 app-id: org.moneymanagerex.MMEX
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: mmex
 cleanup:
@@ -24,28 +24,6 @@ finish-args:
   - --share=ipc
   - --share=network
 modules:
-  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
-  - name: webkit2gtk-4.0
-    sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
-        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: <a href="webkitgtk\-(2\.38\.\d+)\.tar\.xz">
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DPORT=GTK
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DUSE_SOUP2=ON
-    modules:
-      - shared-modules/libsoup/libsoup-2.4.json
   - name: wxWidgets
     config-opts:
       - --disable-shared
@@ -57,8 +35,8 @@ modules:
       - --enable-intl
     sources:
       - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.2.1/wxWidgets-3.2.2.1.tar.bz2
-        sha256: dffcb6be71296fff4b7f8840eb1b510178f57aa2eb236b20da41182009242c02
+        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.3/wxWidgets-3.2.3.tar.bz2
+        sha256: c170ab67c7e167387162276aea84e055ee58424486404bba692c401730d1a67a
         x-checker-data:
           type: json
           url: https://api.github.com/repos/wxWidgets/wxWidgets/releases/latest
