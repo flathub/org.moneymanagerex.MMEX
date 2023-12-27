@@ -47,6 +47,8 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+    post-install:
+      - perl -0777 -i -pe "s@<developer>\n    <name>MMEX team</name>\n  </developer>@<developer_name>MMEX team</developer_name>@g" ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
