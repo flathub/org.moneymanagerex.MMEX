@@ -1,6 +1,6 @@
 app-id: org.moneymanagerex.MMEX
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: mmex
 cleanup:
@@ -47,12 +47,11 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
-    post-install:
-      - perl -0777 -i -pe "s@<developer>\n    <name>MMEX team</name>\n  </developer>@<developer_name>MMEX team</developer_name>@g" ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        commit: 99cdbbdcab1614c82539cc3b130b4cac1759bad8
-        # x-checker-data:
-        #   type: git
-        #  tag-pattern: ^v([\d.]+)$
+        tag: v1.8.0
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+        commit: 3325705b3cbe3906d212cd47c181477aa3ebc794
