@@ -50,8 +50,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        tag: v1.8.0
+        #tag: v1.8.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        commit: 3325705b3cbe3906d212cd47c181477aa3ebc794
+        #commit: 3325705b3cbe3906d212cd47c181477aa3ebc794
+        commit: f8f2f473089679bd87f3f6d27328ff8cffb637c5
