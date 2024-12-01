@@ -55,3 +55,5 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
         commit: d30879a42c471bd707611add65ab589a62e0a61d
+      - type: patch
+        path: org.moneymanagerex.MMEX.metainfo.xml.in.patch
