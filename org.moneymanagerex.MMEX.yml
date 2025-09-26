@@ -54,3 +54,5 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
         commit: 2e244b6c8d0c5e5a593a258777a677072a4413a1
+      - type: patch
+        path: news-version-fix.patch
