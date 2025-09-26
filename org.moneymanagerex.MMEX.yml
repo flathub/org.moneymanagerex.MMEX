@@ -1,12 +1,12 @@
 app-id: org.moneymanagerex.MMEX
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: mmex
 cleanup:
   - /bin/wx-config
   - /bin/wxrc
-  - /bin/wxrc-3.2
+  - /bin/wxrc-3.3
   - /include
   - /lib/*.a
   - /lib/pkgconfig
@@ -26,17 +26,16 @@ finish-args:
 modules:
   - name: wxWidgets
     config-opts:
+      - --enable-std_containers
       - --disable-shared
-      - --enable-cxx11
-      - --with-cxx=11
+      - --with-cxx=17
       - --enable-webview
       - --with-gtk=3
-      - --enable-unicode
       - --enable-intl
     sources:
       - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWidgets-3.2.8.tar.bz2
-        sha256: c74784904109d7229e6894c85cfa068f1106a4a07c144afd78af41f373ee0fe6
+        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2
+        sha256: f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/wxWidgets/wxWidgets/releases/latest
@@ -50,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        tag: v1.9.0
+        tag: v1.9.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        commit: 95a96978a884e15ea89064f82071ea79fb913fdc
+        commit: 2e244b6c8d0c5e5a593a258777a677072a4413a1
