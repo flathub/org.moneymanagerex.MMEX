@@ -34,8 +34,8 @@ modules:
       - --enable-intl
     sources:
       - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2
-        sha256: f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d
+        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.9/wxWidgets-3.2.9.tar.bz2
+        sha256: fb90f9538bffd6a02edbf80037a0c14c2baf9f509feac8f76ab2a5e4321f112b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/wxWidgets/wxWidgets/releases/latest
@@ -49,10 +49,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/moneymanagerex/moneymanagerex
-        tag: v1.9.1
+        tag: v1.9.2
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        commit: 2e244b6c8d0c5e5a593a258777a677072a4413a1
+        commit: 96c3984752b25412d5684156e328bc1b00e2107c
       - type: patch
         path: news-version-fix.patch
